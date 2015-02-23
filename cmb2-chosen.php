@@ -22,7 +22,7 @@ function sfn_render_chosen( $field, $escaped_value, $object_id, $object_type, $f
 	$current_value = $field->value;
 
 ?>
-	<select name="<?php echo $field->args['id']; ?>[]" id="<?php echo $field->args['id']; ?>" class="sfn-chosen" multiple="multiple">
+	<select style="width:100%" name="<?php echo $field->args['id']; ?>[]" id="<?php echo $field->args['id']; ?>" class="sfn-chosen" multiple="multiple">
 		<option></option>
 		<?php foreach( $options as $key => $value ){ ?>
 			<?php $selected = in_array( $key, $current_value ) ? 'selected="selected"' : ''; ?>

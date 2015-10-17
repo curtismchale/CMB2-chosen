@@ -1,4 +1,7 @@
 <?php
+
+define( 'SFN_CHOSEN_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * Renders a select field with our custom class so we can apply the chosen JS later
  *
@@ -14,9 +17,9 @@
  */
 function sfn_render_chosen( $field, $escaped_value, $object_id, $object_type, $field_object_type ){
 
-	wp_enqueue_script( 'chosen', plugins_url( '/pmc-tvt-editing/cmb2-chosen/js/chosen/chosen.jquery.min.js' ), array( 'jquery' ), '1.0', true );
-	wp_enqueue_style( 'chosen_css', plugins_url( '/pmc-tvt-editing/cmb2-chosen/js/chosen/chosen.css' ), '', '1.0', 'all');
-	wp_enqueue_script( 'sfn_chosen', plugins_url( '/pmc-tvt-editing/cmb2-chosen/js/sfn_chosen.js' ), array( 'jquery', 'chosen' ), '1.0', true );
+	wp_enqueue_script( 'chosen',        SFN_CHOSEN_URL . '/js/chosen/chosen.jquery.min.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_style( 'chosen_css',     SFN_CHOSEN_URL . '/js/chosen/chosen.css', '', '1.0', 'all');
+	wp_enqueue_script( 'sfn_chosen',    SFN_CHOSEN_URL . '/js/sfn_chosen.js', array( 'jquery', 'chosen' ), '1.0', true );
 
 	$options = $field->options();
 	$current_value = $field->value;
